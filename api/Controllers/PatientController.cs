@@ -41,7 +41,7 @@ namespace  Controller
         }
         
         [HttpGet]
-        [Route("{id}")]
+        [Route("parid/{id}")]
         public Patient GetPatientById(int id)
         {
             var db  = new PatientContext();

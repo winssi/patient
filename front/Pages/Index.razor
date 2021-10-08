@@ -22,16 +22,14 @@ else
         <thead class="thead">
             <tr>
                 <th scope="col">Nom patient</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">Service</th>
+                <th scope="col">Description</th>
                 <th scope="col"></th>
             </tr>
         </thead>
         @foreach (var Patient in Patients)
         {
             <tr>
-                <th scope="row">1</th>
                 <td>@Patient.Name</td>
                 <td>@Patient.Service</td>
                 <td>@Patient.Description</td>

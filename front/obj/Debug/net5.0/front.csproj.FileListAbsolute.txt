@@ -8,7 +8,6 @@ C:\patient\front\obj\Debug\net5.0\front.RazorComponent.input.cache
 C:\patient\front\obj\Debug\net5.0\RazorDeclaration\App.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\RazorDeclaration\Pages\FetchData.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\RazorDeclaration\Pages\Index.razor.g.cs
-C:\patient\front\obj\Debug\net5.0\RazorDeclaration\Pages\ListePatient.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\RazorDeclaration\Shared\SurveyPrompt.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\RazorDeclaration\_Imports.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\RazorDeclaration\Shared\MainLayout.razor.g.cs
@@ -419,7 +418,6 @@ C:\patient\front\obj\Debug\net5.0\front.RazorCoreGenerate.cache
 C:\patient\front\obj\Debug\net5.0\Razor\App.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\Razor\Pages\FetchData.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\Razor\Pages\Index.razor.g.cs
-C:\patient\front\obj\Debug\net5.0\Razor\Pages\ListePatient.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\Razor\Shared\SurveyPrompt.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\Razor\_Imports.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\Razor\Shared\MainLayout.razor.g.cs

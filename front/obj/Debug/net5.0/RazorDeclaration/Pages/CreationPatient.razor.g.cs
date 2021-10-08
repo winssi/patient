@@ -82,6 +82,20 @@ using front.Shared;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\patient\front\Pages\CreationPatient.razor"
+using System.Text.Json;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\patient\front\Pages\CreationPatient.razor"
+using System.Text.Json.Serialization;
+
+#line default
+#line hidden
+#nullable disable
     [Microsoft.AspNetCore.Components.RouteAttribute("/CreationPatient")]
     public partial class CreationPatient : Microsoft.AspNetCore.Components.ComponentBase
     {
@@ -91,7 +105,7 @@ using front.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 40 "C:\patient\front\Pages\CreationPatient.razor"
+#line 37 "C:\patient\front\Pages\CreationPatient.razor"
        
 
 
@@ -99,7 +113,7 @@ using front.Shared;
 
     protected override async Task OnInitializedAsync()
     {
-        // Patients = await HttpClient.PostAsJsonAsync("https://localhost:5001/Patient/creation", Patients);
+        // Patients = await Http.SendJsonAsync("https://localhost:5001/Patient/creation", Patient);
     }
 
     /* public string HandleValidSubmit()
