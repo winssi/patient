@@ -2,10 +2,15 @@
 @inject HttpClient Http
 
 
+<style>
+    #listePatient {
+        text-decoration: none;
+    }
+</style>
 
-
-
-<p class="h1" id="titreL">Liste des patients</p>
+<div class="alert alert-dark" role="alert">
+    <p class="h1" id="titreL">Liste des patients</p>
+</div>
 
 @if (Patients == null)
 {
@@ -30,10 +35,10 @@ else
                 <td>@Patient.Name</td>
                 <td>@Patient.Service</td>
                 <td>@Patient.Description</td>
+                <button class="btn btn-primary" type="submit">Detail</button>
                 <button class="btn btn-primary" type="submit">Modifier</button>
                 <button class="btn btn-primary" type="submit">Supprimer</button>
             </tr>
-
 
         }
 

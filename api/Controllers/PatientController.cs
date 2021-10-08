@@ -59,7 +59,7 @@ namespace  Controller
             var db  = new PatientContext();
             db.Add(patient);
             db.SaveChanges();
-            return Ok(patient);
+            return Ok("le patien a été créé");
 
         }
 

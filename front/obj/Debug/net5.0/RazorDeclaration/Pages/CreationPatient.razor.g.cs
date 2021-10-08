@@ -90,6 +90,34 @@ using front.Shared;
         {
         }
         #pragma warning restore 1998
+#nullable restore
+#line 40 "C:\patient\front\Pages\CreationPatient.razor"
+       
+
+
+    private Patient Patients = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Patients = await HttpClient.PostAsJsonAsync("https://localhost:5001/Patient/creation", Patients);
+    }
+
+    /* public string HandleValidSubmit()
+    {
+    return "string";
+    }*/
+
+    public class Patient
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Service { get; set; }
+        public string Description { get; set; }
+    }
+
+#line default
+#line hidden
+#nullable disable
         [global::Microsoft.AspNetCore.Components.InjectAttribute] private HttpClient Http { get; set; }
     }
 }

@@ -1,17 +1,62 @@
 @page "/CreationPatient"
 @inject HttpClient Http
-<form>
-    <div class="form-group">
-        <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-            placeholder="Enter email">
+
+<DataAnnotationsValidator />
+
+<div class="card w-75">
+    <div class="card-body">
+
+        <form Model="@Patients">
+            <div class="form-group">
+                <label for="exampleInputEmail1">Nom patient</label>
+                <input class="form-control" id="exampleInputEmail1" placeholder="Name" @bind="Patients.Name">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Prenom</label>
+                <input class="form-control" id="exampleInputPassword1" placeholder="Prenom">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">Service Médicale</label>
+                <select @bind="Patients.Service" id="inputState" class="form-control">
+                    <option selected>Choisir le service</option>
+                    <option value="Pédiatrie">Pédiatrie</option>
+                    <option value="Chirurgie">Chirurgie</option>
+                    <option value="cardiologie">cardiologie</option>
+                    <option value="Ophtalmologie">Ophtalmologie</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="exampleFormControlTextarea1">Description</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"
+                    @bind="Patients.Description"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Enregistrer</button>
+        </form>
+
     </div>
-    <div class="form-group">
-        <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
-    <div class="form-check">
-        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+</div>
+
+
+@code {
+
+
+    private Patient Patients = new();
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Patients = await HttpClient.PostAsJsonAsync("https://localhost:5001/Patient/creation", Patients);
+    }
+
+    /* public string HandleValidSubmit()
+    {
+    return "string";
+    }*/
+
+    public class Patient
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Service { get; set; }
+        public string Description { get; set; }
+    }
+}

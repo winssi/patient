@@ -91,7 +91,7 @@ using front.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 45 "C:\patient\front\Pages\Index.razor"
+#line 50 "C:\patient\front\Pages\Index.razor"
        
 
     private Patient[] Patients;
