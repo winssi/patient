@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 
+
 namespace  Controller
 {
     [ApiController]
@@ -20,25 +21,44 @@ namespace  Controller
         }
         
         [HttpGet]
-        [Route("{id}")]
-        public User GetUserById(int id)
+        [Route("{email}")]
+        public UserP GetUserByEmail(string Email)
         {
             var db  = new PatientContext();
-            var user = db.Users
+            var userpatient = db.UserPs
+                    .Where(a => a.Email == Email)
+                    .First();
+            return userpatient;
+        }
+
+
+        [HttpGet]
+        [Route("{id}")]
+        public UserP GetUserById(int id)
+        {
+            var db  = new PatientContext();
+            var userpatient = db.UserPs
                     .Where(a => a.Id == id)
                     .First();
-            return user;
+            return userpatient;
 
         }
 
         [HttpPost]
         [Route("creation")]
-        public IActionResult AddUser(User user)
+        public IActionResult Register(UserP userpatient)
         {
-            var db  = new PatientContext();
-            db.Add(user);
+            var db = new PatientContext();
+            var mail = userpatient.Email;
+            var verifmail = this.GetUserByEmail(mail);
+            if(verifmail != null)
+            {
+                return Ok("ce compte existe déjà");
+            }
+            db.Add(userpatient);
             db.SaveChanges();
-            return Ok(user);
+            return Ok();
+
         }
 
     }

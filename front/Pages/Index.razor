@@ -1,7 +1,61 @@
 ﻿@page "/"
+@inject HttpClient Http
 
-<h1>Hello, world!</h1>
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+<p class="h1" id="titreL">Liste des patients</p>
+
+@if (Patients == null)
+{
+    <p class="h2">La liste des patients est vide</p>
+}
+else
+{
+    <table class="table" id="listePatient">
+        <thead class="thead">
+            <tr>
+                <th scope="col">Nom patient</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Handle</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        @foreach (var Patient in Patients)
+        {
+            <tr>
+                <th scope="row">1</th>
+                <td>@Patient.Name</td>
+                <td>@Patient.Service</td>
+                <td>@Patient.Description</td>
+                <button class="btn btn-primary" type="submit">Modifier</button>
+                <button class="btn btn-primary" type="submit">Supprimer</button>
+            </tr>
+
+
+        }
+
+    </table>
+
+
+}
+
+@code {
+
+    private Patient[] Patients;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Patients = await Http.GetFromJsonAsync<Patient[]>("https://localhost:5001/Patient/liste");
+    }
+
+    public class Patient
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Service { get; set; }
+        public string Description { get; set; }
+    }
+}

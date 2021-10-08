@@ -22,13 +22,22 @@ namespace  Controller
         
         [HttpGet]
         [Route("liste")]
-        public List<Patient> GetPatients()
+        public IActionResult GetPatients()
         {
             var db  = new PatientContext();
-            var patients = db.Patients
+            if(db != null )
+            {
+                var patients = db.Patients
                 .OrderBy(a => a.Id)
                 .ToList();
-            return patients;
+            
+                if(patients == null)
+                {
+                    return NoContent();
+                }
+                return Ok(patients);
+            }            
+            return NotFound("Pas de connexion");
         }
         
         [HttpGet]
