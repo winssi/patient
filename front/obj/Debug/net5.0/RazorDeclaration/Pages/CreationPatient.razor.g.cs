@@ -113,7 +113,7 @@ using System.Text.Json.Serialization;
 
     protected override async Task OnInitializedAsync()
     {
-        // Patients = await Http.SendJsonAsync("https://localhost:5001/Patient/creation", Patient);
+        //Patients = await Http.SendJsonAsync("https://localhost:5001/Patient/creation", Patient);
     }
 
     /* public string HandleValidSubmit()

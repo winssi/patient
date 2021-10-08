@@ -1,0 +1,41 @@
+@page "/onePatient/{Id}"
+@inject HttpClient Http
+
+<div class="alert alert-dark" role="alert">
+    <p class="h1" id="titreL">Détail du patient </p>
+</div>
+
+<table class="table">
+    <tr>
+        <th scope="row">Nom</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">Service</th>
+        <td></td>
+    </tr>
+    <tr>
+        <th scope="row">Description</th>
+        <td></td>
+    </tr>
+</table>
+
+@code {
+    [Parameter]
+    public string Id { get; set; }
+
+    private Patient PatientO;
+
+    protected override async Task OnInitializedAsync()
+    {
+        PatientO = await Http.GetFromJsonAsync<Patient>("https://localhost:5001/Patient/onePatient/" + Id);
+    }
+
+    public class Patient
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+        public string Service { get; set; }
+        public string Description { get; set; }
+    }
+}

@@ -82,8 +82,8 @@ using front.Shared;
 #line default
 #line hidden
 #nullable disable
-    [Microsoft.AspNetCore.Components.RouteAttribute("/")]
-    public partial class Index : Microsoft.AspNetCore.Components.ComponentBase
+    [Microsoft.AspNetCore.Components.RouteAttribute("/onePatient/{Id}")]
+    public partial class OnePatient : Microsoft.AspNetCore.Components.ComponentBase
     {
         #pragma warning disable 1998
         protected override void BuildRenderTree(Microsoft.AspNetCore.Components.Rendering.RenderTreeBuilder __builder)
@@ -91,14 +91,16 @@ using front.Shared;
         }
         #pragma warning restore 1998
 #nullable restore
-#line 47 "C:\patient\front\Pages\Index.razor"
+#line 23 "C:\patient\front\Pages\OnePatient.razor"
        
+    [Parameter]
+    public string Id { get; set; }
 
-    private Patient[] Patients;
+    private Patient PatientO;
 
     protected override async Task OnInitializedAsync()
     {
-        Patients = await Http.GetFromJsonAsync<Patient[]>("https://localhost:5001/Patient/liste");
+        PatientO = await Http.GetFromJsonAsync<Patient>("https://localhost:5001/Patient/onePatient/" + Id);
     }
 
     public class Patient

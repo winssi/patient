@@ -33,11 +33,10 @@ else
                 <td>@Patient.Name</td>
                 <td>@Patient.Service</td>
                 <td>@Patient.Description</td>
-                <button class="btn btn-primary" type="submit">Detail</button>
-                <button class="btn btn-primary" type="submit">Modifier</button>
-                <button class="btn btn-primary" type="submit">Supprimer</button>
+                <a class="btn btn-primary" href="onePatient/@Patient.Id" role="button">Detail</a>
+                <a class="btn btn-primary" href="onePatient/@Patient.Id" role="button">Modifier</a>
+                <a class="btn btn-primary" href="onePatient/@Patient.Id" role="button">Supprimer</a>
             </tr>
-
         }
 
     </table>

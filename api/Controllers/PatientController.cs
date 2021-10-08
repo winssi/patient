@@ -41,14 +41,14 @@ namespace  Controller
         }
         
         [HttpGet]
-        [Route("parid/{id}")]
-        public Patient GetPatientById(int id)
+        [Route("onePatient/{id}")]
+        public IActionResult GetPatientById(int id)
         {
             var db  = new PatientContext();
             var patient = db.Patients
                     .Where(a => a.Id == id)
                     .First();
-            return patient;
+            return Ok(patient);
 
         }
 

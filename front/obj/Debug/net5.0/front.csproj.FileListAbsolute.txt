@@ -630,3 +630,5 @@ C:\patient\front\obj\Debug\net5.0\ref\front.dll
 C:\patient\front\obj\Debug\net5.0\front.pdb
 C:\patient\front\obj\Debug\net5.0\RazorDeclaration\Pages\CreationPatient.razor.g.cs
 C:\patient\front\obj\Debug\net5.0\Razor\Pages\CreationPatient.razor.g.cs
+C:\patient\front\obj\Debug\net5.0\RazorDeclaration\Pages\OnePatient.razor.g.cs
+C:\patient\front\obj\Debug\net5.0\Razor\Pages\OnePatient.razor.g.cs
